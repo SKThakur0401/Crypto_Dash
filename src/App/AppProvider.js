@@ -16,7 +16,6 @@ export class AppProvider extends React.Component{
             setPage: this.setPage,
             addCoin: this.addCoin,
             removeCoin: this.removeCoin,
-            isInFavorites: this.isInFavorites,
             confirmFavourites: this.confirmFavourites
         }
 
@@ -48,10 +47,6 @@ export class AppProvider extends React.Component{
     removeCoin=key=>{
         let favourites=[...this.state.favourites];
         this.setState({favourites: _.pull(favourites,key)})
-    }
-
-    isInFavorites=key=>{
-         return _.includes(this.state.favourites,key);
     }
 
     confirmFavourites= ()=>{
